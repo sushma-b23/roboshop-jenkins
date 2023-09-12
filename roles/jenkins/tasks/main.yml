@@ -1,6 +1,6 @@
 - name: Create
   community.general.jenkins.job:
-    config: "{{ lookup('file', 'templates/test.xml,) }}"
+    config: "{{ lookup('file', '/tmp/job.xml') }}"
 
     name: test
     url: http://172.31.25.13:8080
@@ -10,3 +10,8 @@
     - frontend
     - cart
     - catalogue
+
+- name: Create Config file
+  ansible.builtinn.template:
+    src: job.xml
+    dest: /tmp/job.xml
