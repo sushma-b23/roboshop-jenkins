@@ -1,0 +1,13 @@
+- name: Create Config file
+  ansible.builtinn.template:
+    src: job.xml
+    dest: /tmp/job.xml
+
+- name: Create
+  community.general.jenkins.job:
+    config: "{{ lookup('file', '/tmp/job.xml') }}"
+
+    name: "{{item}}"
+    url: http://172.31.25.13:8080
+    user: admin
+    password: "{{jenkins_password}}"
