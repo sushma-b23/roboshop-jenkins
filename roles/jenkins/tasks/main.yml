@@ -12,7 +12,7 @@
   ansible.builtin.include_tasks: pipeline.yml
   COMPONENT: "{{item.name}}"
   DIR: "{{item.dir}}"
-  loop:
+  loop: "{{pipeline_jobs}}"
 
 
 
