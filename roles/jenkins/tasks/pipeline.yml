@@ -1,13 +1,27 @@
-- name: Create Config file
-  ansible.builtinn.template:
+- name: Create Folder Config file
+  ansible.builtin.template:
+    src: folder.xml
+    dest: /tmp/folder.xml
+
+- name: Create
+  community.general.jenkins.job:
+    config: "{{ lookup('file', '/tmp/folder.xml') }}"
+    name: "{{item.dir}}"
+    url: http://172.31.25.13:8080
+    user: admin
+    password: "{{jenkins_password}}"
+
+
+- name: Create  Config file
+  ansible.builtin.template:
     src: job.xml
     dest: /tmp/job.xml
 
 - name: Create
   community.general.jenkins.job:
     config: "{{ lookup('file', '/tmp/job.xml') }}"
-
     name: "{{item.dir}}/{{item.name}}"
     url: http://172.31.25.13:8080
     user: admin
     password: "{{jenkins_password}}"
+
