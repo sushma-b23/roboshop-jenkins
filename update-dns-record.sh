@@ -4,7 +4,7 @@ echo '
 {
   "Comment": "CREATE/DELETE/UPSERT  a record ",
   "Changes": [{
-    "Action": "UPSERT",
+    "Action": "UPSERT"
     "ResourceRecordSet": {
       "Name": "jenkins.devops70.online",
       "Type": "A",
