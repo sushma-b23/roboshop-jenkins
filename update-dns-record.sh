@@ -9,7 +9,7 @@ echo '
       "Name": "jenkins.devops70.online",
       "Type": "A",
       "TTL": 15,
-      "ResourceRecords": [{"value": "IPADDRESS"}]
+      "ResourceRecords": [{ "value": "IPADDRESS"}]
     }
   }]
 }' | sed -e "s/IPADDRESS/${IP}/" >/tmp/jenkins.json
