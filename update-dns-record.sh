@@ -2,7 +2,7 @@ Ip=$(aws ec2 describe-instances --filters "Name=tag:Name, Values=jenkins" --quer
 
 echo
 {
-  "Comment": "(REATE/DELETE/UPSERT  a record",
+  "Comment": "CREATE/DELETE/UPSERT  a record",
   "Changes": [{
     "Action": "UPSERT"
     "ResourceRecordSet": {
